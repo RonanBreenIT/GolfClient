@@ -25,7 +25,7 @@ namespace GolfClub.Models
 
         public override string ToString()
         {
-            return "\nFirst Name: " + this.FirstName + "\nSurname: " + this.Surname + "\nGUI: " + this.GUI + "\nMembership Type: " + this.Membership + "\nHandicap: " + this.Handicap + "\nYearly Fees: " + this.YearlyFees + "\nDate Joined: " + this.DateJoined;
+            return "\nFirst Name: " + this.FirstName + "\nSurname: " + this.Surname + "\nGUI: " + this.GUI + "\nMembership Type: " + this.Membership + "\nHandicap: " + this.Handicap + "\nYearly Fees: " + this.YearlyFees + "\nDate Joined: " + this.DateJoined.ToShortDateString();
 
         }
     }

@@ -59,11 +59,13 @@ namespace GolfClient
 
 
                 // DELETE: api/GolfClub/DeleteMember/33333333
-                Golfer g3 = new Golfer() { GUI = 11111111, FirstName = "Rick", Surname = "Ross", Handicap = 3, DateJoined = new DateTime(2020, 02, 02), Membership = MemberType.Patron, YearlyFees = 2000 };
+                response = await client.GetAsync("GetByGUI/33333333");
+                var returnGolfer = await response.Content.ReadAsAsync<Golfer>();
+
                 response = client.DeleteAsync("DeleteMember/33333333").Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    Console.WriteLine("\nDeleted Golfer: " + g3.FirstName + " " + g3.Surname);
+                    Console.WriteLine("\nDeleted Golfer: "+ returnGolfer.FirstName + " " + returnGolfer.Surname);
                 }
             }
         }
